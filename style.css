@@ -9,9 +9,10 @@ body{
 .header{
     display: flex;
     width: 80vw;
-    height: 10vh;
+    height: 15vh;
     margin-left: auto;
     margin-right: auto;
+    border-bottom: 1px solid rgba(197, 192, 192, 0.5);
 }
 .nav1{
     display: flex;
@@ -23,6 +24,9 @@ body{
 .logobox{
     width: 28%;
 }
+.mobile-menu-item{
+    display: none;
+}
 .logo{
     width: 100%;
 }
@@ -33,13 +37,21 @@ body{
     display: flex;
     justify-content: space-between;
     width: 65%;
+    height: 100%;
+    align-items: center;
 }
 .nav-list-item{
     display: block;
+    height: 100%;
     text-decoration: none;
+    padding-top: 10%;
     font-size: 14px;
     color: rgb(174, 166, 166);
     text-transform: capitalize;
+}
+.nav-list-item:hover{
+    color: black;
+    border-bottom: 3px solid rgb(255,125,27);
 }
 .nav-icons{
     display: flex;
@@ -56,12 +68,6 @@ body{
 .avatar{
     width: 40px;
     height: 40px;
-}
-.line{
-    width: 80vw;
-    height: 3vh;
-    border-bottom: 1px solid rgba(197, 192, 192, 0.5);
-    margin: 0 auto;
 }
 .section{
     width: 70vw;
@@ -87,6 +93,10 @@ body{
     width: 21%;
     height: 18%;
     border-radius: 10px;
+}
+.photo:hover{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    border: 2px solid rgb(255,125,27);
 }
 .text-wrapper{
     width: 40%;
@@ -204,6 +214,29 @@ body{
         width: 70%;
         justify-content:start;
         gap:20%;
+        position: relative;
+    }
+    .mobile-menu-item{
+        display: block;
+        position: absolute;
+        background-color: white;
+        width: 80vw;
+        height: 100vh;
+        top: -20%;
+        left: -23%
+    }
+    .mobile-list-item{
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 0 0 20px 50px;
+        text-transform: capitalize;
+        color: black
+    }
+    .close{
+        padding-bottom: 60px;
+        color: rgb(174, 166, 166);
     }
     .header{
         width: 90vw;
