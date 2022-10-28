@@ -13,13 +13,15 @@
     <nav class="nav1">
         <div class="logobox">
             <img class="hidden mobile-menu-wrapper" src="./images/icon-menu.svg" alt="menu">
-            <div class="mobile-menu-item">
+            <div class="mobile-menu-bckg hidden2">
+                <div class="mobile-menu-item">
                 <a href="#" class="mobile-list-item close">x</a>
                 <a href="#" class="mobile-list-item">collections</a>
                 <a href="#" class="mobile-list-item">men</a>
                 <a href="#" class="mobile-list-item">women</a>
                 <a href="#" class="mobile-list-item">about</a>
                 <a href="#" class="mobile-list-item">contact</a>
+                </div>
             </div>
             <img class="logo" src="./images/logo.svg" alt="logo">
         </div>
@@ -33,6 +35,10 @@
     </nav>
     <div class="nav-icons">
         <img class="cart" src="./images/icon-cart.svg" alt="cart">
+        <div class="cart-dropdown hidden3">
+            <div class="cart-dropdown-cart">Cart</div>
+            <div class="cart-dropdown-content">Your cart is empty</div>
+        </div>
         <img class="avatar" src="./images/image-avatar.png" alt="avatar">
     </div>
     </header>
@@ -60,9 +66,9 @@
             <div class="price">$125.00 <span class="percentage"><small>50%</small></span></div>
             <div class="prev-price">$250.00</div>
             <div class="add-to-cart">
-                <div class="icon icon1"><img class="icon-image" src="./images/icon-minus.svg" alt=""></div>
+                <div class="icon icon1 minus"><img class="icon-image" src="./images/icon-minus.svg" alt=""></div>
                 <div class="icon"><p class="icon-p">0</p></div>
-                <div class="icon icon3"><img class="icon-image" src="./images/icon-plus.svg" alt=""></div>
+                <div class="icon icon3 plus"><img class="icon-image" src="./images/icon-plus.svg" alt=""></div>
                 <div class="cart-icon">
                     <img class="cart-icon-img" src="./images/icon-cart.svg" alt=""> 
                     <p class="cart-icon-p">Add to cart</p>
@@ -70,5 +76,7 @@
             </div>
         </div>
     </section>
+
+    <script src="./script.js"></script>
 </body>
 </html>
