@@ -379,6 +379,7 @@ body{
     }
     .photo-wrapper{
         width: 100%;
+        position: relative;
     }
     .text-wrapper{
         width: 90%;
@@ -451,13 +452,15 @@ body{
         font-size: 16px;
     }
     .display-photos{
-        position: relative;
+        width: 400vw;
+        overflow: hidden;
+        border-radius: 0;
     }
     .greater-than{
         display: block;
         position: absolute;
         transform:scale(1.4);
-        top: 50%;
+        top: 35%;
         right: 6%;
         width: 20px;
         background-color: white;
@@ -469,7 +472,7 @@ body{
         display: block;
         position: absolute;
         transform:scale(1.4);
-        top: 50%;
+        top: 35%;
         left: 6%;
         width: 20px;
         background-color: white;
@@ -479,6 +482,13 @@ body{
     }
     .mobile-photo-container{
         display: flex;
+        width:400vw;
+    }
+    .mobile-photo{
+        width: 100vw;
+        height: 100%;
+
+        
     }
           
   
