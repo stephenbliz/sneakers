@@ -8,12 +8,48 @@ const minusIcon = document.querySelector('.minus');
 const plusIcon = document.querySelector('.plus');
 const display = document.querySelector('.icon-p');
 const cartIcon = document.querySelector('.cart');
-const cartContent = document.querySelector('.cart-dropdown');
+const cartContent = document.querySelector('.cart-empty');
+const cartContentFull = document.querySelector('.cart-full');
 const selectedItems = document.querySelector('.cart-dropdown-content');
 const price = document.querySelector('.prices')
 const addToCart = document.querySelector('.cart-icon');
 const photoFrame = document.querySelector('.display-photos');
 const smallPhotos = document.querySelectorAll('.photo');
+const moveRight = document.querySelector('.greater-than');
+const moveLeft = document.querySelector('.lesser-than');
+const bigphotos = document.querySelectorAll('.big-photo');
+const amount = document.querySelector('.amount');
+const amountCalculation = document.querySelector('.sum');
+const deleteIcon = document.querySelector('.delete-icon');
+const checkOut = document.querySelector('.check-out');
+
+// function declarations
+
+function add(){
+    cartIndicator.style.display ='block';
+    cartIndicator.innerText = display.innerText;
+    const shoePrice = 125.00;
+    const totalAmount = shoePrice * Number(cartIndicator.innerText);
+
+    amountCalculation.innerHTML =`$${shoePrice} x ${cartIndicator.innerText}`;
+    amount.innerHTML = `$${totalAmount}`;
+
+    if(cartIndicator.innerText == 0){
+        cartContentFull.style.top = '-50vh';
+        cartContent.style.top = '12vh';
+    }else{
+        cartContent.style.top = '-50vh';
+        cartContentFull.style.top = '12vh';
+    }
+};
+
+function open(){
+    if(cartIndicator.innerText === '0'){
+        cartContent.classList.toggle('hidden3');
+    }else{
+        cartContentFull.classList.toggle('cart-full');
+    }
+};
 
 // dropdown menu
 
@@ -28,7 +64,7 @@ closeMenu.addEventListener('click', () => {
 // Dropdown Cart
 
 cartIcon.addEventListener('click', () =>{
-    cartContent.classList.toggle('hidden3');
+    open();
 });
 
 // Chosing the quantity of products
@@ -48,61 +84,63 @@ minusIcon.addEventListener('click', () => {
 // Adding the number of items to cart 
 
 addToCart.addEventListener('click', () =>{
-    cartIndicator.style.display ='block';
-    cartIndicator.innerText = display.innerText;
-    const shoePrice = 125.00;
-    const totalAmount = shoePrice * Number(cartIndicator.innerText);
+    
+add();
 
-
-    if(cartIndicator.innerText !== '0'){
-        selectedItems.innerHTML =  `
-        <img class="jsImage" src="./images/image-product-1-thumbnail.jpg" alt="">
-        <div class="jsDiv">
-            <p class="jsDiv-p1">fall limited edition sneakers</p>
-            <p class="jsDiv-p2">$${shoePrice} x ${cartIndicator.innerText}</p>
-            <p class="jsDiv-p2 amount">$${totalAmount}</p>
-        </div>
-        <img class="delete-icon" src="./images/icon-delete.svg" alt="delete-icon">
-        <div class="check-out">checkout</div>
-        `; 
-    }else{
-        return
-    };
+scrollTo(top);
 });
 
 // Displaying different photos of the sneakers
 
-const bigPhotos = [
-    `<img class="big-photo" src='./images/image-product-1.jpg'>`,
-    `<img class="big-photo" src='./images/image-product-2.jpg'>`,
-    `<img class="big-photo" src='./images/image-product-3.jpg'>`,
-    `<img class="big-photo" src='./images/image-product-4.jpg'>`
-];
-
 smallPhotos.forEach((photo, index) => {
-    photo.addEventListener('click', () => {
-        photoFrame.innerHTML = bigPhotos[index];
+        photo.addEventListener('click', () => {
+            photoFrame.style.transform =`translatex(${-28 * index}vw)`;
+        });
     });
-});
 
 // Switching photos in mobile view
 
-const moveRight = document.querySelector('.greater-than');
-const moveLeft = document.querySelector('.lesser-than');
+let x = 0;
 
-const mobilePhotoContainer = `
-<div class="mobile-photo-container">
-<img src="./images/image-product-1.jpg" alt="" class="mobile-photo">
-<img src="./images/image-product-2.jpg" alt="" class="mobile-photo">
-<img src="./images/image-product-3.jpg" alt="" class="mobile-photo">
-<img src="./images/image-product-4.jpg" alt="" class="mobile-photo">
-</div>
-`;
+moveRight.addEventListener('click', () => {
+    x++;
+    if(x < 4){
+        photoFrame.style.transform = `translatex(${-100 * x}vw)`;
+    }
+});
 
- if(screen.availWidth <= 480){
-    photoFrame.innerHTML = mobilePhotoContainer;
- }
-else if(screen.availWidth > 480){
-    photoFrame.innerHTML;
-};
+moveLeft.addEventListener('click', () => {
+    x--;
+    if(x = 4){
+        x = 0;
+        photoFrame.style.transform = `translatex(${100 * x}vw)`;
+    }else{
+       
+        photoFrame.style.transform = `translatex(${100 * (x-1)}vw)`;
+    };
+        
+});
 
+// deleting items in the cart
+
+
+deleteIcon.addEventListener('click', () => {
+
+    display.innerText = '0';
+    add();
+    open();
+});
+
+// checking out items in the cart
+// const popUp = document.querySelector('.pop-up');
+checkOut.addEventListener('click', () => {
+    
+    display.innerText = '0';
+    add();
+    open();
+    
+    setTimeout(() =>{
+        alert("Your order has been submitted");
+    }, 1000);
+    
+});

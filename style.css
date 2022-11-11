@@ -85,6 +85,10 @@ body{
     box-shadow: 5px 5px 10px rgba(210, 204, 204, 0.723);
     top: 12vh;
     right: -10%;
+    transition: all .45s ease-in-out;
+}
+.cart-full{
+    display: none;
 }
 .hidden3{
     display: none;
@@ -126,6 +130,7 @@ body{
 .delete-icon{
     width: 5%;
     height: 10%;
+    cursor: pointer;
 }
 .check-out{
     width: 100%;
@@ -137,6 +142,7 @@ body{
     background-color: rgb(255,125,27);
     border-radius: 5px;
     color: white;
+    cursor: pointer;
 }
 .jsDiv-p1{
     width: 100%;
@@ -174,16 +180,19 @@ body{
     justify-content: space-between;
 }
 .photo-wrapper{
-    width: 40%;
+    width: 28vw;
     height: 100%;
-    display: flex;
+    overflow-x: hidden;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 .display-photos{
-    width: 100%;
+    display: flex;
+    width: 112vw;
     height: 78%;
     border-radius: 10px;
+    transition: all 1s ease-in-out;
 }
 .mobile-photo-container{
     display: none;
@@ -195,9 +204,16 @@ body{
     display: none;
 }
 .big-photo{
-    width: 100%;
+    width: 28vw;
     height: 100%;
     border-radius: 10px;
+}
+.display-small-photos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+    
 }
 .photo{
     width: 21%;
@@ -361,7 +377,7 @@ body{
         height: 150vh;
          top: -6vh;
         left: -23%;
-        z-index: 1;
+        z-index: 3;
     }
     .hidden2{
         display: none;
@@ -378,7 +394,7 @@ body{
         width: 100vw;
     }
     .photo-wrapper{
-        width: 100%;
+        width: 100vw;
         position: relative;
     }
     .text-wrapper{
@@ -387,7 +403,7 @@ body{
     }
     .big-photo{
         border-radius: 0;
-        width:100%;
+        width:100vw;
     }
     .photo{
         display:none;
@@ -421,7 +437,7 @@ body{
         right: 2px;
         top: 20vh;
         height: 300px;
-        z-index: 1;
+        z-index: 2;
     }
     .check-out{
         padding-top: 25px;
@@ -452,8 +468,7 @@ body{
         font-size: 16px;
     }
     .display-photos{
-        width: 400vw;
-        overflow: hidden;
+        width: 400%;
         border-radius: 0;
     }
     .greater-than{
@@ -467,6 +482,7 @@ body{
         text-align: center;
         border-radius: 50%;
         cursor: pointer;
+        z-index: 1;
     }
     .lesser-than{
         display: block;
@@ -474,22 +490,21 @@ body{
         transform:scale(1.4);
         top: 35%;
         left: 6%;
+        z-index: 1;
         width: 20px;
         background-color: white;
         text-align: center;
         border-radius: 50%;
         cursor: pointer;
     }
-    .mobile-photo-container{
+    /* .mobile-photo-container{
         display: flex;
         width:400vw;
     }
     .mobile-photo{
         width: 100vw;
         height: 100%;
-
-        
-    }
+    } */
           
   
 }
