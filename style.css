@@ -49,11 +49,13 @@ body{
     color: rgb(174, 166, 166);
     text-transform: capitalize;
 }
+
 .nav-list-item:hover{
     color: black;
     border-bottom: 3px solid rgb(255,125,27);
 }
 .nav-icons{
+    position: relative;
     display: flex;
     height: 100%;
     width: 50%;
@@ -157,11 +159,18 @@ body{
 }
 
 .cart{
+    position: absolute;
+    top: 50%;
+    right: 18.5%;
+    transform: translateY(-50%);
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
 .avatar{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -258,9 +267,10 @@ body{
     font-size: 18px;
 }
 .percentage{
+    width: 50px;
     font-weight: 500;
-    color: rgb(255,125,27);
-    background-color: rgb(250, 186, 138);
+    color: rgb(215, 99, 11);
+    background-color: rgba(250, 186, 138, 0.198);
     margin: auto 10px;
 }
 .prev-price{
@@ -310,6 +320,9 @@ body{
 .cart-icon{
     width: 65%;
     margin-left: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    /* gap: 8px; */
     color: white;
     border-radius: 5px;
     background-color: rgb(255,125,27);
@@ -317,15 +330,23 @@ body{
     cursor: pointer;
     padding: auto;
 }
+.cart-icon-img-wrapper{
+    width: 20%;
+    margin-left: 17%;
+    position: relative;
+}
 .cart-icon-img{
     color: white;
-    width: 52px;
-    padding-top: 10px;
-    padding-left: 39px;
+    width: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .cart-icon-p{
-    display: inline;
-    padding-left: 10px;
+    text-align: start;
+    margin-right: 20%;
+    padding-top: 2.5%; 
 }
 
 @media screen and (max-width: 480px){
